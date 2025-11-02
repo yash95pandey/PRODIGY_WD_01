@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Landing Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    /* Navbar */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: transparent;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: 0.3s;
+      z-index: 1000;
+    }
+
+    nav.scrolled {
+      background: #333;
+      color: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    nav .logo {
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+
+    nav ul li {
+      margin-left: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #000;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav.scrolled ul li a {
+      color: #fff;
+    }
+
+    nav ul li a:hover {
+      color: #ff6600;
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      background: url('https://picsum.photos/1600/900') no-repeat center/cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .hero h1 {
+      font-size: 50px;
+      margin: 0;
+    }
+
+    /* Content Section */
+    .content {
+      padding: 80px 40px;
+      background: #f4f4f4;
+      margin-top: -20px;
+    }
+
+    .content h2 {
+      margin: 20px 0;
+      color: #333;
+    }
+
+    .content p {
+      margin-bottom: 20px;
+      color: #555;
+    }
+
+    /* Responsive Design */
+    @media(max-width: 1024px) {
+      .hero h1 {
+        font-size: 40px;
+      }
+    }
+
+    @media(max-width: 768px) {
+      nav {
+        flex-direction: column;
+        padding: 10px 20px;
+      }
+
+      nav ul {
+        flex-direction: column;
+        margin-top: 10px;
+        align-items: center;
+      }
+
+      nav ul li {
+        margin: 10px 0;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+        padding: 0 10px;
+      }
+
+      .content {
+        padding: 40px 20px;
+      }
+    }
+
+    @media(max-width: 480px) {
+      .hero h1 {
+        font-size: 28px;
+      }
+
+      .content {
+        padding: 30px 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="navbar">
+    <div class="logo">My Website</div>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero">
+    <h1>Welcome to My Landing Page</h1>
+  </div>
+
+  <div class="content">
+    <h2>About Section</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus at felis vitae sapien varius cursus.</p>
+    <h2>Services</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec justo quis lorem volutpat commodo.</p>
+    <h2>Contact</h2>
+    <p>Email: example@mail.com</p>
+  </div>
+
+  <script>
+    // Navbar scroll effect
+    window.addEventListener("scroll", function() {
+      const navbar = document.getElementById("navbar");
+      if (window.scrollY > 50) {
+        navbar.classList.add("scrolled");
+      } else {
+        navbar.classList.remove("scrolled");
+      }
+    });
+  </script>
+
+</body>
+</html>
